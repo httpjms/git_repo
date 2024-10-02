@@ -2,59 +2,95 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
 
-.main-body {
+.container {
   background-color: #1e3e62;
-  margin: auto;
   width: 100%;
   height: 100%;
   min-height: 720px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.main-body {
+  display: flex;
+  gap: 50px;
+  max-width: 90%;
+  margin: auto;
 }
 .newjoiner-form,
 .emp-ad-task,
 .emp-zendesk-task,
-.emp-coruson-task {
+.emp-coruson-task,
+.emp-sdp-task {
   display: flex;
   flex-direction: column;
 }
-
-.newjoiner-form input {
-  height: 20px;
-  width: 200px;
-  padding: 5px;
-  margin: 5px;
+.newjoiner-form {
+  max-width: 100%;
+  text-align: center;
+  border: 1px solid white;
+  height: 450px;
+  padding: 20px;
 }
-.btnGenerate {
-  height: 30px;
+
+ul {
+  list-style: none;
+}
+.task-box {
+  border-top: #102236;
+  border-bottom: #102236;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.newjoiner-form input,
+select {
+  height: 40px;
   width: 200px;
-  padding: 5px;
+  padding: 0px 15px;
   margin: 5px;
+  background-color: rgba(255, 255, 255, 0.875);
+  border: none;
+  border-bottom: 1px solid;
+  color: black;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.btnGenerate {
+  height: 40px;
+  width: 95;
+  padding: 0px 15px;
+  margin: 5px;
+  gap: 50px;
+  background-color: #5cb85c;
+  border: none;
+  border-bottom: 1px solid;
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+.btnGenerate:hover {
+  background-color: #57dc57;
 }
 .newjoiner-form select {
-  height: 30px;
-  width: 210px;
-  padding: 5px;
+  height: 40px;
+  width: 230px;
+  padding: 0px 15px;
   margin: 5px;
+  gap: 50px;
+  background-color: rgba(255, 255, 255, 0.875);
+  border: none;
+  border-bottom: 1px solid;
+  color: black;
+  font-size: 14px;
+  border-radius: 10px;
 }
 .employee-container {
   display: flex;

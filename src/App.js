@@ -4,6 +4,7 @@ import NewJoinerForm from "./components/NewJoinerForm";
 import ADTask from "./components/ADTask";
 import ZendeskTask from "./components/Zendesk";
 import CorusonTask from "./components/Coruson";
+import SDP from "./components/SDP";
 
 function App() {
   const [employees, setEmployees] = useState("");
@@ -12,19 +13,34 @@ function App() {
   };
 
   return (
-    <div className="main-body">
-      <NewJoinerForm onGenerate={handleGenerate} />
-      {employees.length < 1 ? (
-        <div>Fill out the form to generate report</div>
-      ) : (
-        employees.map((employee) => (
-          <div className="employee-container" key={employee.adid}>
-            <ADTask employee={employee} />
-            <ZendeskTask employee={employee} />
-            <CorusonTask employee={employee} />
+    <div className="container">
+      <div className="main-body">
+        <NewJoinerForm onGenerate={handleGenerate} />
+        {employees.length < 1 ? (
+          <div className="employee-container">
+            <h2> Fill out the form to generate report</h2>
           </div>
-        ))
-      )}
+        ) : (
+          employees.map((employee) => (
+            <div className="employee-container" key={employee.adid}>
+              <ul>
+                <li className="task-box">
+                  <ADTask employee={employee} />
+                </li>
+                <li className="task-box">
+                  <ZendeskTask employee={employee} />
+                </li>
+                <li className="task-box">
+                  <SDP employee={employee} />
+                </li>
+                <li className="task-box">
+                  <CorusonTask employee={employee} />
+                </li>
+              </ul>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
