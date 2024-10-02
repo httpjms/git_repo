@@ -5,12 +5,20 @@ import ADTask from "./components/ADTask";
 import ZendeskTask from "./components/Zendesk";
 import CorusonTask from "./components/Coruson";
 import SDP from "./components/SDP";
+import TaskItem from "./components/TaskItem";
 
 function App() {
   const [employees, setEmployees] = useState("");
   const handleGenerate = (employee) => {
     setEmployees((prevEmployee) => [...prevEmployee, employee]);
   };
+  const task = [
+    "Copy to AD ",
+    "Local IT",
+    "Zendesk Request",
+    "Coruson Request",
+    "SDP Request",
+  ];
 
   return (
     <div className="container">
@@ -24,9 +32,13 @@ function App() {
           employees.map((employee) => (
             <div className="employee-container" key={employee.adid}>
               <ul>
+                {task.map((t) => (
+                  <TaskItem key={t} task={t} />
+                ))}
                 <li className="task-box">
                   <ADTask employee={employee} />
                 </li>
+
                 <li className="task-box">
                   <ZendeskTask employee={employee} />
                 </li>
