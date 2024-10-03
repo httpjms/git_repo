@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import NewJoinerForm from "./components/NewJoinerForm";
-import ADTask from "./components/ADTask";
-import ZendeskTask from "./components/Zendesk";
-import CorusonTask from "./components/Coruson";
-import SDP from "./components/SDP";
+import ADTask from "./components/DefaultApps/ADTask";
+import ZendeskTask from "./components/DefaultApps/Zendesk";
+import CorusonTask from "./components/DefaultApps/Coruson";
+import SDP from "./components/DefaultApps/SDP";
+import TaskItem from "./components/TaskItem";
 
 function App() {
   const [employees, setEmployees] = useState("");
@@ -23,20 +24,37 @@ function App() {
         ) : (
           employees.map((employee) => (
             <div className="employee-container" key={employee.adid}>
-              <ul>
+              <TaskItem
+                taskName="Copy to AD"
+                element={<ADTask employee={employee} />}
+              />
+
+              <TaskItem
+                taskName="Zendesk"
+                element={<ZendeskTask employee={employee} />}
+              />
+              <TaskItem
+                taskName="SDP Request"
+                element={<SDP employee={employee} />}
+              />
+              <TaskItem
+                taskName="Coruson"
+                element={<CorusonTask employee={employee} />}
+              />
+
+              {/* <ul>
+                <li className="task-box"></li>
+
                 <li className="task-box">
-                  <ADTask employee={employee} />
+                  
                 </li>
                 <li className="task-box">
-                  <ZendeskTask employee={employee} />
+                  
                 </li>
                 <li className="task-box">
-                  <SDP employee={employee} />
+                 
                 </li>
-                <li className="task-box">
-                  <CorusonTask employee={employee} />
-                </li>
-              </ul>
+              </ul> */}
             </div>
           ))
         )}

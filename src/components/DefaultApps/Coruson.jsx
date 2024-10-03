@@ -1,8 +1,6 @@
 const CorusonTask = ({ employee }) => {
   return (
     <div className="emp-coruson-task">
-      <h3>Coruson</h3>
-
       <label>
         Hi Jaya, <p>Good day.</p> For your kind assistance please on the
         creation of Coruson Profile for below new joiner
