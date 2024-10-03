@@ -69,7 +69,9 @@ function NewJoinerForm({ onGenerate }) {
       selectedCity,
       address,
       zipCode,
+      isomplete: false,
     };
+
     onGenerate(newJoiner);
     setTicketID("");
     setFirstName("");

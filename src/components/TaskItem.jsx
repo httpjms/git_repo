@@ -1,9 +1,22 @@
-const TaskItem = ({ task }) => {
+import { useState } from "react";
+
+const TaskItem = ({ taskName, element }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleOpen() {
+    setIsOpen(!isOpen);
+  }
   return (
-    <li className="task-item">
-      {/* <input type="checkbox" name="task" />
-      <label htmlFor="task">{task.map(t=>)}</label> */}
-    </li>
+    <div className="task-container-details">
+      <div className="task-title" onClick={toggleOpen}>
+        <h2>{taskName}</h2>
+        <span>
+          <strong> {isOpen ? "-" : "+"}</strong>
+        </span>
+      </div>
+
+      <div className="task-details">{isOpen && element}</div>
+    </div>
   );
 };
 

@@ -36,16 +36,33 @@
   height: 450px;
   padding: 20px;
 }
-
+.task-container-details {
+  gap: 20px;
+  min-width: 500px;
+  max-width: 700px;
+  border-top: #102236;
+  border-bottom: #102236;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.task-title {
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-title span {
+  font-size: 40px;
+  cursor: pointer;
+}
+.task-details {
+  padding: 10px 30px;
+}
 ul {
   list-style: none;
 }
-.task-box {
-  border-top: #102236;
-  border-bottom: #102236;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+/* .task-box {
   cursor: pointer;
-}
+} */
 
 .newjoiner-form input,
 select {
