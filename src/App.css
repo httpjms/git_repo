@@ -112,8 +112,7 @@ select {
 }
 
 /* Button.css */
-.copyBtn-AD,
-.copyBtn-Zendesk {
+.copyBtn {
   background-color: #15304e; /* Background color */
   color: white; /* Text color */
   border: none; /* No border */
@@ -124,12 +123,10 @@ select {
   transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
 }
 
-.copyBtn-AD,
-.copyBtn-Zendesk:hover {
+.copyBtn-AD:hover {
   background-color: #1a3149; /* Darker shade on hover */
 }
 
-.copyBtn,
-.copyBtn-Zendesk:active {
+.copyBtn:active {
   transform: scale(0.98); /* Slightly shrink button on click */
 }
