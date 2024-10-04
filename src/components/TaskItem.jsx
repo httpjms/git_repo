@@ -6,6 +6,7 @@ const TaskItem = ({ taskName, element }) => {
   function toggleOpen() {
     setIsOpen(!isOpen);
   }
+
   return (
     <div className="task-container-details">
       <div className="task-title" onClick={toggleOpen}>

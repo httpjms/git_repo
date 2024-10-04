@@ -6,12 +6,12 @@ const CorusonTask = ({ employee }) => {
         creation of Coruson Profile for below new joiner
       </label>
       <p></p>
-      <label>Forename: {employee.firstName}</label>
-      <label>Last Name: {employee.lastName}</label>
-      <label>Email Address: {employee.emailAdd}</label>
-      <label>Department: {employee.department}</label>
-      <label>OKTA ID: {employee.adid}</label>
-      <label>Country: {employee.country}</label>
+      <p>Forename: {employee.firstName}</p>
+      <p>Last Name: {employee.lastName}</p>
+      <p>Email Address: {employee.emailAdd}</p>
+      <p>Department: {employee.department}</p>
+      <p>OKTA ID: {employee.adid}</p>
+      <p>Country: {employee.country}</p>
     </div>
   );
 };

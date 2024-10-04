@@ -1,18 +1,20 @@
 const SDP = ({ employee }) => {
   return (
     <div className="emp-sdp-task">
-      <label>For enabling po ng SDP. thank you</label>
+      <p>
+        <label>For enabling po ng SDP. thank you</label>
+      </p>
       <p></p>
-      <label>
+      <p>
         Display Name: {employee.firstName} {employee.lastName}
-      </label>
-      <label>OKTA ID: {employee.adid}</label>
-      <label>Email Address: {employee.emailAdd}</label>
-      <label>Job Title: {employee.jobTitle}</label>
-      <label>Department: {employee.department}</label>
-      <label>Manager: {employee.manager}</label>
-      <label>Country: {employee.country}</label>
-      <label>Zendesk: Created</label>
+      </p>
+      <p>OKTA ID: {employee.adid}</p>
+      <p>Email Address: {employee.emailAdd}</p>
+      <p>Job Title: {employee.jobTitle}</p>
+      <p>Department: {employee.department}</p>
+      <p>Manager: {employee.manager}</p>
+      <p>Country: {employee.country}</p>
+      <p>Zendesk: Created</p>
     </div>
   );
 };

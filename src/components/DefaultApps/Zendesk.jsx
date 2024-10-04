@@ -1,12 +1,12 @@
 const ZendeskTask = ({ employee }) => {
   return (
     <div className="emp-zendesk-task">
-      <label>For Zendesk creation, thank you!</label>
-      <label>
+      <p>For Zendesk creation, thank you!</p>
+      <p>
         Full Name: {employee.firstName} {employee.lastName}
-      </label>
-      <label>Email Address: {employee.emailAdd}</label>
-      <label>ADID: {employee.adid}</label>
+      </p>
+      <p>Email Address: {employee.emailAdd}</p>
+      <p>ADID: {employee.adid}</p>
     </div>
   );
 };

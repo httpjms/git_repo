@@ -9,10 +9,17 @@ import TaskItem from "./components/TaskItem";
 
 function App() {
   const [employees, setEmployees] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
+  console.log(isCopied);
+
   const handleGenerate = (employee) => {
     setEmployees((prevEmployee) => [...prevEmployee, employee]);
   };
 
+  function copyToClipboard(textCopy) {
+    navigator.clipboard.writeText(textCopy);
+    setIsCopied(true);
+  }
   return (
     <div className="container">
       <div className="main-body">
@@ -26,7 +33,13 @@ function App() {
             <div className="employee-container" key={employee.adid}>
               <TaskItem
                 taskName="Copy to AD"
-                element={<ADTask employee={employee} />}
+                element={
+                  <ADTask
+                    employee={employee}
+                    onCopyText={copyToClipboard}
+                    isCopied={isCopied}
+                  />
+                }
               />
 
               <TaskItem
@@ -41,20 +54,6 @@ function App() {
                 taskName="Coruson"
                 element={<CorusonTask employee={employee} />}
               />
-
-              {/* <ul>
-                <li className="task-box"></li>
-
-                <li className="task-box">
-                  
-                </li>
-                <li className="task-box">
-                  
-                </li>
-                <li className="task-box">
-                 
-                </li>
-              </ul> */}
             </div>
           ))
         )}

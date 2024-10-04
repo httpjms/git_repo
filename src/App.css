@@ -21,14 +21,7 @@
   max-width: 90%;
   margin: auto;
 }
-.newjoiner-form,
-.emp-ad-task,
-.emp-zendesk-task,
-.emp-coruson-task,
-.emp-sdp-task {
-  display: flex;
-  flex-direction: column;
-}
+
 .newjoiner-form {
   max-width: 100%;
   text-align: center;
@@ -39,7 +32,7 @@
 .task-container-details {
   gap: 20px;
   min-width: 500px;
-  max-width: 700px;
+  max-width: 600px;
   border-top: #102236;
   border-bottom: #102236;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -53,6 +46,9 @@
 .task-title span {
   font-size: 40px;
   cursor: pointer;
+}
+p {
+  line-height: 0.1; /* Adjusts line height for readability */
 }
 .task-details {
   padding: 10px 30px;
