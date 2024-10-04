@@ -15,7 +15,7 @@ const TaskItem = ({ taskName, element }) => {
         </span>
       </div>
 
-      <div className="task-details">{isOpen && element}</div>
+      <div className="task">{isOpen && element}</div>
     </div>
   );
 };

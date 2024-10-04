@@ -9,6 +9,7 @@ import TaskItem from "./components/TaskItem";
 
 function App() {
   const [employees, setEmployees] = useState("");
+
   const handleGenerate = (employee) => {
     setEmployees((prevEmployee) => [...prevEmployee, employee]);
   };
@@ -25,7 +26,7 @@ function App() {
           employees.map((employee) => (
             <div className="employee-container" key={employee.adid}>
               <TaskItem
-                taskName="Copy to AD"
+                taskName="ActiveDirectory"
                 element={<ADTask employee={employee} />}
               />
 
@@ -33,28 +34,11 @@ function App() {
                 taskName="Zendesk"
                 element={<ZendeskTask employee={employee} />}
               />
-              <TaskItem
-                taskName="SDP Request"
-                element={<SDP employee={employee} />}
-              />
+              <TaskItem taskName="SDP" element={<SDP employee={employee} />} />
               <TaskItem
                 taskName="Coruson"
                 element={<CorusonTask employee={employee} />}
               />
-
-              {/* <ul>
-                <li className="task-box"></li>
-
-                <li className="task-box">
-                  
-                </li>
-                <li className="task-box">
-                  
-                </li>
-                <li className="task-box">
-                 
-                </li>
-              </ul> */}
             </div>
           ))
         )}
