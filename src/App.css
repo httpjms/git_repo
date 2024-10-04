@@ -33,6 +33,7 @@
   gap: 20px;
   min-width: 500px;
   max-width: 600px;
+  padding: 0px 20px;
   border-top: #102236;
   border-bottom: #102236;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -108,4 +109,27 @@ select {
 .employee-container {
   display: flex;
   flex-direction: column;
+}
+
+/* Button.css */
+.copyBtn-AD,
+.copyBtn-Zendesk {
+  background-color: #15304e; /* Background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.copyBtn-AD,
+.copyBtn-Zendesk:hover {
+  background-color: #1a3149; /* Darker shade on hover */
+}
+
+.copyBtn,
+.copyBtn-Zendesk:active {
+  transform: scale(0.98); /* Slightly shrink button on click */
 }

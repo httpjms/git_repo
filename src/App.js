@@ -9,17 +9,11 @@ import TaskItem from "./components/TaskItem";
 
 function App() {
   const [employees, setEmployees] = useState("");
-  const [isCopied, setIsCopied] = useState(false);
-  console.log(isCopied);
 
   const handleGenerate = (employee) => {
     setEmployees((prevEmployee) => [...prevEmployee, employee]);
   };
 
-  function copyToClipboard(textCopy) {
-    navigator.clipboard.writeText(textCopy);
-    setIsCopied(true);
-  }
   return (
     <div className="container">
       <div className="main-body">
@@ -32,24 +26,15 @@ function App() {
           employees.map((employee) => (
             <div className="employee-container" key={employee.adid}>
               <TaskItem
-                taskName="Copy to AD"
-                element={
-                  <ADTask
-                    employee={employee}
-                    onCopyText={copyToClipboard}
-                    isCopied={isCopied}
-                  />
-                }
+                taskName="ActiveDirectory"
+                element={<ADTask employee={employee} />}
               />
 
               <TaskItem
                 taskName="Zendesk"
                 element={<ZendeskTask employee={employee} />}
               />
-              <TaskItem
-                taskName="SDP Request"
-                element={<SDP employee={employee} />}
-              />
+              <TaskItem taskName="SDP" element={<SDP employee={employee} />} />
               <TaskItem
                 taskName="Coruson"
                 element={<CorusonTask employee={employee} />}

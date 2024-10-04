@@ -1,5 +1,5 @@
-import Button from "../Button";
-const ADTask = ({ employee, onCopyText, isCopied }) => {
+import { useState } from "react";
+const ADTask = ({ employee }) => {
   const copyText = `
     Full Name: ${employee.firstName} ${employee.lastName}
     Email Address: ${employee.emailAdd}
@@ -12,11 +12,6 @@ const ADTask = ({ employee, onCopyText, isCopied }) => {
     City: ${employee.selectedCity}
   `;
 
-  // For Zendesk creation:
-  // Full Name: ${employee.firstName} ${employee.lastName}
-  // Email Address: ${employee.emailAdd}
-  // ADID: ${employee.adid}
-
   // For Coruson Profile creation:
   // Forename: ${employee.firstName}
   // Last Name: ${employee.lastName}
@@ -24,7 +19,11 @@ const ADTask = ({ employee, onCopyText, isCopied }) => {
   // Department: ${employee.department}
   // OKTA ID: ${employee.adid}
   // Country: ${employee.country}
-
+  const [isCopied, setIsCopied] = useState(false);
+  function copyToClipboard(textCopy) {
+    navigator.clipboard.writeText(textCopy);
+    setIsCopied(true);
+  }
   return (
     <div className="emp-ad-task">
       <p>
@@ -39,13 +38,14 @@ const ADTask = ({ employee, onCopyText, isCopied }) => {
       <p>Zip Code: {employee.zipCode}</p>
       <p>City: {employee.selectedCity}</p>
 
-      <div className="copyBtn">
-        <Button
+      <div className="copy-button">
+        <button
+          className="copyBtn"
           disabled={isCopied ? true : false}
-          clickBtn={() => onCopyText(copyText)}
+          onClick={() => copyToClipboard(copyText)}
         >
           {isCopied ? "Copied ✔" : "Copy"}
-        </Button>
+        </button>
       </div>
     </div>
   );

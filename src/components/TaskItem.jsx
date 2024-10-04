@@ -6,7 +6,6 @@ const TaskItem = ({ taskName, element }) => {
   function toggleOpen() {
     setIsOpen(!isOpen);
   }
-
   return (
     <div className="task-container-details">
       <div className="task-title" onClick={toggleOpen}>
@@ -16,7 +15,7 @@ const TaskItem = ({ taskName, element }) => {
         </span>
       </div>
 
-      <div className="task-details">{isOpen && element}</div>
+      <div className="task">{isOpen && element}</div>
     </div>
   );
 };
