@@ -11,6 +11,7 @@ function NewJoinerForm({ onGenerate }) {
   const [department, setDepartment] = useState("");
   const [manager, setManager] = useState("");
   const [adid, setAdid] = useState("");
+  const [defaultApps, setDefaultApps] = useState("");
 
   //-----------------------------------------//
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -56,6 +57,7 @@ function NewJoinerForm({ onGenerate }) {
       !zipCode
     )
       return;
+
     const newJoiner = {
       ticketID,
       firstName,
@@ -69,6 +71,8 @@ function NewJoinerForm({ onGenerate }) {
       selectedCity,
       address,
       zipCode,
+      selectedCountry,
+      defaultApps,
       isomplete: false,
     };
 
@@ -84,8 +88,10 @@ function NewJoinerForm({ onGenerate }) {
     setSelectedCountry("");
     setCountry("");
     setSelectedCity("");
+    setDefaultApps("");
     setAddress("");
     setZipCode("");
+    console.log(newJoiner);
   }
 
   return (

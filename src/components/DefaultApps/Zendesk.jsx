@@ -13,7 +13,7 @@ const ZendeskTask = ({ employee }) => {
     setIsCopied(true);
   }
   return (
-    <div className="emp-zendesk-task">
+    <div className="emp-task">
       <p>For Zendesk creation, thank you!</p>
       <p>
         Full Name: {employee.firstName} {employee.lastName}
