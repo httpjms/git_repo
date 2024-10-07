@@ -7,7 +7,12 @@
 }
 
 .container {
-  background-color: #1e3e62;
+  background: rgb(30, 62, 98);
+  background: linear-gradient(
+    342deg,
+    rgba(30, 62, 98, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
   width: 100%;
   height: 100%;
   min-height: 720px;
@@ -33,10 +38,11 @@
   gap: 20px;
   min-width: 500px;
   max-width: 600px;
-  padding: 0px 20px;
+  padding: 20px 20px;
   border-top: #102236;
   border-bottom: #102236;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 .task-title {
   display: flex;
@@ -57,10 +63,25 @@ p {
 ul {
   list-style: none;
 }
-/* .task-box {
-  cursor: pointer;
-} */
+.emp-task {
+  padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Change this to any of the options above */
 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.emp-task p {
+  word-wrap: break-word; /* Allow words to break onto the next line */
+  overflow-wrap: break-word;
+  line-height: 1.5; /* Adjust line height for readability */
+  margin: 0 auto;
+}
 .newjoiner-form input,
 select {
   height: 40px;
@@ -113,11 +134,11 @@ select {
 
 /* Button.css */
 .copyBtn {
-  background-color: #15304e; /* Background color */
+  background-color: rgba(0, 0, 0, 0.2); /*;Background color */
   color: white; /* Text color */
   border: none; /* No border */
   border-radius: 4px; /* Rounded corners */
-  padding: 10px 15px; /* Padding */
+  padding: 7px 15px; /* Padding */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */

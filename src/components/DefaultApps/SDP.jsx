@@ -1,23 +1,10 @@
-import { useState } from "react";
+import CopyButton from "./CopyButton";
 
 const SDP = ({ employee }) => {
-  const [isCopied, setIsCopied] = useState(false);
+  const copyText = `For enabling po ng SDP, thank you!\nDisplay Name: ${employee.firstName} ${employee.lastName}\nEmail Address: ${employee.emailAdd}\nJob Title: ${employee.jobTitle}\nDepartment: ${employee.department}\nManager: ${employee.manager}\nAddress: ${employee.address}\nZip Code: ${employee.zipCode}\nCountry: ${employee.country}`;
 
-  const copyText = `For enabling po ng SDP, thank you! 
-  Display Name: ${employee.firstName} ${employee.lastName}
-  Email Address: ${employee.emailAdd}
-  Job Title: ${employee.jobTitle}
-  Department: ${employee.department}
-  Manager: ${employee.manager}
-  Address: ${employee.address}
-  Zip Code: ${employee.zipCode}
-  Country: ${employee.country}`;
-  function copyToClipboard(copyText) {
-    navigator.clipboard.writeText(copyText);
-    setIsCopied(true);
-  }
   return (
-    <div className="emp-sdp-task">
+    <div className="emp-task">
       <p>
         <label>For enabling po ng SDP. thank you</label>
       </p>
@@ -33,13 +20,7 @@ const SDP = ({ employee }) => {
       <p>Zendesk: Created</p>
 
       <div className="copy-button">
-        <button
-          className="copyBtn"
-          disabled={isCopied ? true : false}
-          onClick={() => copyToClipboard(copyText)}
-        >
-          {isCopied ? "Copied ✔" : "Copy"}
-        </button>
+        <CopyButton copyText={copyText} />
       </div>
     </div>
   );
